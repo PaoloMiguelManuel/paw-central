@@ -100,215 +100,6 @@ function extractBreedImageList(response) {
     return response.message;
 }
 
-// dog jokes
-function dogJokes() {
-    // jokes were copied from below sites
-    // https://www.familyminded.com/s/best-knock-knock-jokes-dc9cdf3cb12c4c3e   
-    // https://bestlifeonline.com/dog-puns/ 
-    let jokes =
-        [
-            {
-                "joke": "How do you know a good dog pun from a bad dog pun?",
-                "punchLine": "The good ones make you bark with laughter!"
-            },
-            {
-                "joke": "Why did the dog cross the road twice?",
-                "punchLine": "He was trying to fetch a boomerang!"
-            },
-            {
-                "joke": "What happened to the dog who gave birth on the side of the road?",
-                "punchLine": "She was ticketed for littering!"
-            },
-            {
-                "joke": "Looking for some great dog puns?",
-                "punchLine": "Then paws what you're doing and read these!"
-            },
-            {
-                "joke": "The dog couldn't remember where he parked his car…",
-                "punchLine": "in the barking lot."
-            },
-            {
-                "joke": "What's better than a spelling bee?",
-                "punchLine": "A talking dog!"
-            },
-            {
-                "joke": "My friend said he once threw a stick two miles and his dog still brought it back…",
-                "punchLine": "Seems a bit far-fetched to me."
-            },
-            {
-                "joke": "What did the dog say when he went to the dentist?",
-                "punchLine": "I think one of my canines is getting loose!"
-            },
-            {
-                "joke": "Where do dogs like to surf?",
-                "punchLine": "Collie-fornia!"
-            },
-            {
-                "joke": "What's a dog's favourite movie?",
-                "punchLine": "Harry Paw-ter and the Sorcerer's Bone!"
-            },
-            {
-                "joke": "What do dogs call their parents?",
-                "punchLine": "Ma and paw."
-            },
-            {
-                "joke": "What do you call a dog who picks a lock?",
-                "punchLine": "A corg-key!"
-            },
-            {
-                "joke": "What do you call a cold dog?",
-                "punchLine": "A pup-sicle!"
-            },
-            {
-                "joke": "What's a pup's favorite action flick?",
-                "punchLine": "Jurassic Bark!"
-            },
-            {
-                "joke": "What did the dog say before he left for work?",
-                "punchLine": "Just another day at the paw-ffice!"
-            },
-            {
-                "joke": "What do dogs eat at the movies?",
-                "punchLine": "Pup-eroni pizza and pup-corn!"
-            },
-            {
-                "joke": "The dog picnic quickly turned into...",
-                "punchLine": "a Bark-B-Q!"
-            },
-            {
-                "joke": "Where do dogs go when their tail falls off?",
-                "punchLine": "The re-tail store."
-            },
-            {
-                "joke": "Did you see the dog's new outfit?",
-                "punchLine": "It was quite fetching!"
-            },
-            {
-                "joke": "How are we doing with these dog puns?",
-                "punchLine": "Some of them are ruff, but a few of them have paw-tential!"
-            },
-            {
-                "joke": "What did the dog say to its Valentine?",
-                "punchLine": "I'm mutts about you!"
-            },
-            {
-                "joke": "Why was the puppy party so loud?",
-                "punchLine": "They turned up the sub-woof-ers!"
-            },
-            {
-                "joke": "What did the celebrity dog say when someone took his photo?",
-                "punchLine": "Sorry, no pup-arazzi please!"
-            },
-            {
-                "joke": "Why should you be cautious when it's raining cats and dogs?",
-                "punchLine": "If you're not careful, you could step in a poodle!"
-            },
-            {
-                "joke": "What was the sale this week at the pet store?",
-                "punchLine": "Buy one dog, get one flea!"
-            },
-            {
-                "joke": "What do you call a dog magician?",
-                "punchLine": "A labracadabrador."
-            },
-            {
-                "joke": "What do dogs eat for breakfast?",
-                "punchLine": "Pooched eggs."
-            },
-            {
-                "joke": "What kind of dog does Dracula have?",
-                "punchLine": "A bloodhound."
-            },
-            {
-                "joke": "What do a dog and a cellphone have in common?",
-                "punchLine": "Both have collar ID."
-            },
-            {
-                "joke": "What kind of dog loves to take bubble baths?",
-                "punchLine": "A shampoodle."
-            },
-            {
-                "joke": "What kind of dog doesn't bark?",
-                "punchLine": "A hush puppy."
-            },
-            {
-                "joke": "What's a dog's favourite instrument?",
-                "punchLine": "A trom-bone."
-            },
-            {
-                "joke": "Why doesn't anyone want to work for dogs?",
-                "punchLine": "Because they hound their employees."
-            },
-            {
-                "joke": "What kind of dog chases anything red?",
-                "punchLine": "A bulldog."
-            },
-            {
-                "joke": "What does a dog say before eating?",
-                "punchLine": "Bone appetit!"
-            },
-            {
-                "joke": "What do you call a cold dog?",
-                "punchLine": "A chili dog."
-            },
-            {
-                "joke": "What did the dog say to the tree?",
-                "punchLine": "Bark."
-            },
-            {
-                "joke": "What is a dog's favourite city?",
-                "punchLine": "New Yorkie."
-            },
-            {
-                "joke": "What dog keeps the best time?",
-                "punchLine": "A watchdog."
-            },
-            {
-                "joke": "How does a dog stop a TV show?",
-                "punchLine": "He presses paws."
-            },
-            {
-                "joke": "What do you get when you cross a cocker spaniel, a poodle and a rooster?",
-                "punchLine": "A cockerpoodledoo!"
-            },
-            {
-                "joke": "What does a dog get when they finish obedience school?",
-                "punchLine": "Their pet-degree!"
-            },
-            {
-                "joke": "What did the dog say when they sat on sandpaper?",
-                "punchLine": "That was ruff!"
-            },
-            {
-                "joke": "What do you call a left-handed boxer?",
-                "punchLine": "A south paw!"
-            },
-            {
-                "joke": "What do you do if your dog chews a dictionary?",
-                "punchLine": "Take the words out of his mouth!"
-            },
-            {
-                "joke": "What do you call a wild dog that meditates?",
-                "punchLine": "Aware wolf."
-            },
-            {
-                "joke": "What do you get if you cross a gold dog with a telephone?",
-                "punchLine": "A golden receiver."
-            },
-            {
-                "joke": "What did the dog say to his landlord?",
-                "punchLine": "I think we need to renegotiate the terms of my leash."
-            },
-            {
-                "joke": "Do you think he's a bad dog?",
-                "punchLine": "No, but he is a little ruff around the edges."
-            }
-        ];
-    return jokes[Math.floor(Math.random() * jokes.length)];
-}
-
-
-
 /**
  * Given a list of breed image URLs, erase our current image
  * container of any <img>s, and create new ones for these URLs. 
@@ -329,51 +120,31 @@ function updateBreedImages(breedImageList, requestedCnt, availImgs) {
     carouIndicators.classList.remove('hidden');
 
 
-
-
-
-    // 
-    // let err = document.querySelector("#error-msg");
-    // let errMsg = document.querySelector("#error-alert-message");
-    // err.classList.add('show');
-    // errMsg.innerHTML = message;
-    // 
-
-
-
-    // let pageHeading = document.querySelector("#page-heading");
-
-
-    // pageHeading.innerHTML = "";
-    // pageHeading.innerHTML = "testing";
     breedHeading.innerHTML = "";
 
 
     // create and add selected BREED
-    let span = document.createElement('span');
+    let h2 = document.createElement('h2');
+
+    let breedHeadingName = document.createElement('span');
+    breedHeadingName.setAttribute("id", "breed-name");
+    breedHeadingName.innerHTML = `Selected Breed: ${breedVal}`;
+
     let badge = document.createElement('span');
-    span.setAttribute("id", "breed-name");
     badge.setAttribute("id", "count-badge");
-
-
     badge.classList.add('badge', 'badge-warning');
-    badge.innerHTML = "testing";
+    // badge.innerHTML = "testing";
 
 
 
     // span.setAttribute("class", "text-capitalize");
-    let h2 = document.createElement('h2');
-    h2.appendChild(span);
-    // badge.innerHTML = "testing";
+    h2.appendChild(breedHeadingName);
     h2.appendChild(badge);
     breedHeading.appendChild(h2);
-    // lolz.appendChild(h2);
 
     // olActive.setAttribute("id", "breed-name");
 
 
-    // h2.appendChild(selectedBreed);
-    // pageHeading.appendChild(h2);
 
     // alert(`count = ${requestedCnt} | available = ${availImgs}`);
 
@@ -387,7 +158,6 @@ function updateBreedImages(breedImageList, requestedCnt, availImgs) {
 
     // below code works
     // span.innerHTML = breedVal; 
-    span.innerHTML = `Selected Breed: ${breedVal}`;
 
     if (availImgs === 1) {
         badge.innerHTML = `${availImgs} image available`;
@@ -418,10 +188,6 @@ function updateBreedImages(breedImageList, requestedCnt, availImgs) {
         let alertMsg = document.querySelector("#alert-msg2");
         alert.classList.remove('hidden');
         alertMsg.innerHTML = `There are only ${availImgs} images available!`;
-
-
-
-
     }
 
 
@@ -480,18 +246,16 @@ function updateBreedImages(breedImageList, requestedCnt, availImgs) {
         div.appendChild(img);
 
 
-        // dog jokes
-        let dogJoke = dogJokes();
+     
 
 
 
-
-        // create and add caption
-        let caption = document.createElement("div");
-        caption.classList.add('carousel-caption', 'd-none', 'd-md-block', 'text-capitalize');
-        div.appendChild(caption);
-        let capHeading = document.createElement("h5");
-        capHeading.innerHTML = dogJoke.joke;
+        // // create and add caption
+        // let caption = document.createElement("div");
+        // caption.classList.add('carousel-caption', 'd-none', 'd-md-block', 'text-capitalize');
+        // div.appendChild(caption);
+        // let capHeading = document.createElement("h5");
+        // capHeading.innerHTML = dogJoke.joke;
 
 
 
@@ -499,19 +263,19 @@ function updateBreedImages(breedImageList, requestedCnt, availImgs) {
         // console.log(dogJoke.joke);
         // console.log(dogJoke.punchLine);
 
-        let capDesc = document.createElement("p");
-        capDesc.classList.add("jk-punchline");
-        capDesc.innerHTML = dogJoke.punchLine;
+        // let capDesc = document.createElement("p");
+        // capDesc.classList.add("jk-punchline");
+        // capDesc.innerHTML = dogJoke.punchLine;
 
 
-        let newDiv = document.createElement("div");
-        newDiv.classList.add("rando");
-        // newDiv.appendChild()
+        // let newDiv = document.createElement("div");
+        // newDiv.classList.add("rando");
+        // // newDiv.appendChild()
 
 
-        newDiv.appendChild(capHeading);
-        newDiv.appendChild(capDesc);
-        caption.appendChild(newDiv);
+        // newDiv.appendChild(capHeading);
+        // newDiv.appendChild(capDesc);
+        // caption.appendChild(newDiv);
 
 
 

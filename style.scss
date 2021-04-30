@@ -17,7 +17,6 @@ body {
 .highlight {
   color: #ffc107;
 }
-
 .main-content {
   min-height: 95%;
   padding-bottom: 0;
@@ -49,16 +48,22 @@ main {
   margin-bottom: 2em;
 }
 
+
+
 .alert {
   margin-bottom: 0;
 }
 
 img {
+  // display: block;
   margin: auto;
+  // height: 100%;
   height: 20%;
   position: relative;
   top: 50%;
   width: 100%;
+  // max-height: 80vh;
+  // transform: translateY(-50%);
 }
 
 @media screen and (min-width: 767px) {
@@ -66,10 +71,13 @@ img {
     max-height: 60vh;
     background-color: #181a1b;
   }
+
   img {
     height: 100%;
     width: auto;
   }
+
+
   .carousel-item {
     text-align: center;
   }
@@ -105,57 +113,104 @@ img {
 
 h2 {
   font-size: 3em;
+  // line-spacing: 0;
   margin-bottom: 20px;
 }
 
 h5 {
   font-size: 1.5rem;
   color: #ffffff;
+
   text-align: center;
 }
 
 @media screen and (max-width: 767px) {
   #breed-name {
     text-align: center;
+    // color: red;
     padding: 0;
     margin: 0;
     font-size: 0.5em;
   }
+
   h2 {
     line-height: 0.5em;
     padding: 0 10px;
   }
+
+  // #breed-name {
+  //   h2 {
+  //     line-height: 0;
+  //   }
+  //   // color: red;
+  //   padding: 0;
+  // }
+
+  // #count-badge {
+  //   font-size: 0.2em;
+  // }
+
+  // #breed-heading {
+  //   text-align: center;
+  // }
   h5 {
     text-align: center;
     padding-bottom: 0.3em;
   }
+
   p {
+    //  padding-left: 1em 6em 5em;
+    //  padding-right: 1.5em;
     text-align: center;
     padding: 0 2em 0;
   }
+
+  .footer-cust {
+    //   padding-top: 1em;
+    // padding-top: 2em;
+  }
+}
+
+// .footer-socials {
+// //   text-align: center;
+// //   position: absolute;
+//   bottom: 0;
+//   font-size: 2em;
+//   color: #ffc107;
+// }
+
+.footer-info {
+  //   padding-top: 1em;
+  // padding: 0;
 }
 
 .footer-cust {
   height: 200px;
 }
 
+// .cpy-footer {
+//    text-align: center;
+//    padding-top: 2em;
+// }
+
 .fa-socials {
+  // color: red;
+  a {
+    color: #ffffff;
+    font-size: 2em;
+    padding: 0 10px;
+
+    &:hover {
+      color: #ffc107;
+    }
+  }
   padding-bottom: 3em;
-}
-
-.fa-socials a {
-  color: #ffffff;
-  font-size: 2em;
-  padding: 0 10px;
-}
-
-.fa-socials a:hover {
-  color: #ffc107;
 }
 
 .cpy-info {
   background-color: #181a1b;
   color: #737a7e;
+  // height:
   position: fixed;
   bottom: 0;
   width: 100%;
@@ -167,10 +222,8 @@ hr {
 
 .call-to {
   color: #ffffff;
+  &:hover {
+    text-decoration: none;
+    color: #ffc107;
+  }
 }
-
-.call-to:hover {
-  text-decoration: none;
-  color: #ffc107;
-}
-/*# sourceMappingURL=style.css.map */
