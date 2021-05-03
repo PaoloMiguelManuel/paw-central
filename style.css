@@ -54,10 +54,6 @@ main {
 }
 
 img {
-  margin: auto;
-  height: 20%;
-  position: relative;
-  top: 50%;
   width: 100%;
 }
 
