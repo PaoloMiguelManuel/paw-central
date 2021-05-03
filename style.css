@@ -19,7 +19,7 @@ body {
 }
 
 .main-content {
-  min-height: 95%;
+  min-height: 100vh;
   padding-bottom: 0;
 }
 
@@ -111,6 +111,9 @@ h5 {
 }
 
 @media screen and (max-width: 767px) {
+  label {
+    padding-top: 15px;
+  }
   #breed-name {
     text-align: center;
     padding: 0;

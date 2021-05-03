@@ -128,7 +128,7 @@ function updateBreedImages(breedImageList, requestedCnt, availImgs) {
 
     let breedHeadingName = document.createElement('span');
     breedHeadingName.setAttribute("id", "breed-name");
-    breedHeadingName.innerHTML = `Selected Breed: ${breedVal}`;
+    breedHeadingName.innerHTML = `Selected Breed: <span class="highlight">${breedVal}</span>`;
 
     let badge = document.createElement('span');
     badge.setAttribute("id", "count-badge");
