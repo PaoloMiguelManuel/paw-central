@@ -1,14 +1,33 @@
-// page finished loading AJAX retrieves dog breeds
+// load list of dog breeds on page load
 window.onload = function () {
     loadDogBreeds();
-};
+}
 
-// error handler display messages on page
-function showError(message) {
-    let err = document.querySelector("#error-msg");
-    let errMsg = document.querySelector("#error-alert-message");
-    err.classList.remove('hidden');
-    errMsg.innerHTML = message;
+// display errors
+function updateError(message, action) {
+    let errorContainer = document.querySelector("#error-container");
+    let errorMessage = document.querySelector("#error-message");
+
+    if (action === 'show') {
+        errorContainer.classList.remove('hidden');
+        errorMessage.innerHTML = message;
+    } else {
+        errorContainer.classList.add('hidden');
+        errorMessage.innerHTML = "";
+    }
+}
+
+// insufficient amount of pictures alert
+function showAlert(availableImages) {
+    let alertContainer = document.querySelector("#alert-container");
+    let alertMessage = document.querySelector("#alert-message");
+
+    alertContainer.classList.remove('hidden');
+    if (availableImages === 1) {
+        alertMessage.innerHTML = `There is only ${availableImages} image available!`;
+    } else {
+        alertMessage.innerHTML = `There are only ${availableImages} images available!`;
+    }
 }
 
 // loop through list of breeds, create <option>s then add to <select>
@@ -17,115 +36,105 @@ function updateBreedList(breedList) {
     let btnLoad = document.querySelector("#btn-load");
     let btnRand = document.querySelector("#btn-random");
 
-    function createBreedOption(name) {
-        let option = document.createElement("option");
-        option.value = name;
-        option.innerHTML = name;
-        return option;
+    // create <option> for the single breed passed in
+    function createBreedOption(breedName) {
+        let breedOption = document.createElement("option");
+        breedOption.value = breedName;
+        breedOption.innerHTML = breedName;
+        return breedOption;
     }
 
+    // pass each breed in "breedList" to createBreedOption
     breedList.forEach(function (breed) {
         let breedOption = createBreedOption(breed);
         select.appendChild(breedOption);
     });
 
-    btnLoad.onclick = function (e) {
-        let breed = select.value;
-        loadBreedImages(breed);
+    // retrieve images for user selected breed
+    btnLoad.onclick = function () {
+        let selectedBreed = select.value;
+        loadBreedImages(selectedBreed);
     };
 
-    btnRand.onclick = function (e) {
+    // randomize breed
+    btnRand.onclick = function () {
         // get length of object for randomizer
-        var size = Object.keys(breedList).length;
+        let size = Object.keys(breedList).length;
 
-        // randomize
+        // random number from 0 to 94 (if size = 95)
         let rand = Math.floor(Math.random() * size);
-
         select.value = breedList[rand];
     }
 }
 
 // get user input for number of images
 function getImageCount() {
-    let input = document.querySelector("#image-count");
-    return input.value;
+    let imageCount = document.querySelector("#image-count");
+    return imageCount.value;
 }
 
+// message is an object with the URLs for the breed images in the array
 function extractBreedImageList(response) {
-    if (response.status !== "success") {
-        throw new Error("response wasn't successful");
+    if (response.status !== 'success') {
+        throw new Error('response was not successful');
     }
     return response.message;
 }
 
-// erase current images in container and create new one for retrieved dog image URLs
-function updateBreedImages(breedImageList, requestedCnt, availImgs) {
-    let imagesContainer = document.querySelector("#images-container");
-    let breedHeading = document.querySelector("#breed-heading");
-    let breedsSelect = document.querySelector("#breeds");
-    let breedVal = breedsSelect.value;
-    // let liContainer = document.querySelector("#carou-indicator");
-    let carouIndicators = document.querySelector("#carou-controls");
-    
-    carouIndicators.classList.remove('hidden');
-    breedHeading.innerHTML = "";
-
-    // create and add selected BREED
+// create heading for the user selected breed
+function createBreedHeading(availableImages) {
+    let breedHeading = document.querySelector('#breed-heading');
+    let selectedBreed = document.querySelector('#breeds');
     let h2 = document.createElement('h2');
-
     let breedHeadingName = document.createElement('span');
-    breedHeadingName.setAttribute("id", "breed-name");
-    breedHeadingName.innerHTML = `Selected Breed: <span class="highlight">${breedVal}</span>`;
-
     let badge = document.createElement('span');
-    badge.setAttribute("id", "count-badge");
+
+    // clear previous heading
+    breedHeading.innerHTML = '';
+
+    // selected breed name
+    breedHeadingName.setAttribute('id', 'breed-name');
+    breedHeadingName.innerHTML = `Selected Breed: <span class="highlight">${selectedBreed.value}</span>`;
+
+    // available image count badge
+    badge.setAttribute('id', 'count-badge');
     badge.classList.add('badge', 'badge-warning');
 
+    if (availableImages === 1) {
+        badge.innerHTML = `${availableImages} image available`;
+    } else {
+        badge.innerHTML = `${availableImages} images available`;
+    }
+
+    // append selected breed name and image count badge to <h2>
     h2.appendChild(breedHeadingName);
     h2.appendChild(badge);
     breedHeading.appendChild(h2);
+}
 
-    if (availImgs === 1) {
-        badge.innerHTML = `${availImgs} image available`;
-    }
-    else {
-        badge.innerHTML = `${availImgs} images available`;
-    }
+// show bootstrap carousel next/prev indicators
+function showCarouselIndicators() {
+    let carouselIndicators = document.querySelector('#carou-controls');
+    carouselIndicators.classList.remove('hidden');
+}
 
+// erase current images in container and create new one for retrieved dog image URLs
+function updateBreedImages(breedImageList, requestedCount, availableImages) {
+    let imagesContainer = document.querySelector('#images-container');
+
+    // clear previous image container
     imagesContainer.innerHTML = "";
-    // liContainer.innerHTML = "";
 
-    if (requestedCnt > availImgs) {
+    createBreedHeading(availableImages);
+    showCarouselIndicators();
 
-        let alert = document.querySelector("#alert-msg");
-        let alertMsg = document.querySelector("#alert-msg2");
-        alert.classList.remove('hidden');
-        if(availImgs === 1) {
-            alertMsg.innerHTML = `There is only ${availImgs} image available!`;
-        }
-        else {
-            alertMsg.innerHTML = `There are only ${availImgs} images available!`;
-        }
+    // insufficient error message
+    if (requestedCount > availableImages) {
+        showAlert(availableImages);
     }
-
-    // create first active indicator
-    // let olActive = document.createElement('li');
-    // olActive.setAttribute("data-target", "#carouselExampleIndicators");
-    // olActive.setAttribute("data-slide-to", 0);
-    // olActive.classList.add('active');
-    // liContainer.appendChild(olActive);
-
-    // create indicator for each successfully retrieved image
-    // for (let i = 0; i < availImgs - 1; i++) {
-    //     let olImgs = document.createElement('li');
-    //     olImgs.setAttribute("data-target", "#carouselExampleIndicators");
-    //     olImgs.setAttribute("data-slide-to", i + 1);
-    //     liContainer.appendChild(olImgs);
-    // }
-
-    let count = 0;
 
     // Loop through the image URLs, and create new <img> elements
+    let count = 0;
     function createImgElement(url) {
         let div = document.createElement("div");
         div.classList.add('carousel-item');
@@ -134,7 +143,6 @@ function updateBreedImages(breedImageList, requestedCnt, availImgs) {
             div.classList.add('active');
             count++;
         }
-
         let img = document.createElement("img");
         img.src = url;
         div.appendChild(img);
@@ -150,13 +158,7 @@ function updateBreedImages(breedImageList, requestedCnt, availImgs) {
 // dynamically load list of dog image URLS for given breed name
 function loadBreedImages(breed) {
     let imageCount = getImageCount();
-    // See https://dog.ceo/dog-api/documentation/breed
-    // Use the imageCount and breed variables to create our URL 
-    let url = `https://dog.ceo/api/breed/${breed}/images/random/${imageCount}`;
     let xhr = new XMLHttpRequest();
-
-    let err = document.querySelector("#error-msg");
-    let errMsg = document.querySelector("#error-alert-message");
 
     xhr.onload = function () {
         try {
@@ -164,23 +166,22 @@ function loadBreedImages(breed) {
             let breedImageList = extractBreedImageList(response);
 
             if (imageCount > 0) {
-                err.classList.add('hidden');
-                errMsg.innerHTML = "";
-                let alrt = document.querySelector("#alert-msg");
-                let alrtMsg = document.querySelector("#alert-msg2");
-                alrt.classList.add('hidden');
-                alrtMsg.innerHTML = "";
+                updateError(null, 'hide')
+                let alertContainer = document.querySelector("#alert-container");
+                let alertMessage = document.querySelector("#alert-message");
+                alertContainer.classList.add('hidden');
+                alertMessage.innerHTML = "";
                 updateBreedImages(breedImageList, imageCount, breedImageList.length);
             }
         } catch (e) {
-            showError("Please Select a Dog Breed.");
+            updateError("Please Select a Dog Breed.", 'show');
         }
     };
 
     xhr.onerror = function () {
-        showError("Please Enter a Quantity.");
+        updateError("Please Enter a Quantity.", 'show');
     };
-    xhr.open("GET", url);
+    xhr.open("GET", `https://dog.ceo/api/breed/${breed}/images/random/${imageCount}`);
     xhr.send();
 }
 
@@ -193,8 +194,6 @@ function extractBreedList(response) {
 
 // creates XHR request to get dog breeds as JSON, parse JSON and get list of breeds
 function loadDogBreeds() {
-    // See https://dog.ceo/dog-api/documentation/
-    let url = "https://dog.ceo/api/breeds/list/all";
     let xhr = new XMLHttpRequest();
 
     xhr.onload = function () {
@@ -203,12 +202,14 @@ function loadDogBreeds() {
             let breedList = extractBreedList(response);
             updateBreedList(breedList);
         } catch (e) {
-            showError("Unable to load dog breeds");
+            updateError("Unable to load dog breeds", 'show');
         }
     };
+
     xhr.onerror = function () {
-        showError("Unable to load dog breeds");
+        updateError("Unable to load dog breeds", 'show');
     };
-    xhr.open("GET", url);
+
+    xhr.open('GET', 'https://dog.ceo/api/breeds/list/all');
     xhr.send();
 }
