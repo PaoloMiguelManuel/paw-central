@@ -114,7 +114,7 @@ function createBreedHeading(availableImages) {
 
 // show bootstrap carousel next/prev indicators
 function showCarouselIndicators() {
-    let carouselIndicators = document.querySelector('#carou-controls');
+    let carouselIndicators = document.querySelector('#carousel-controls');
     carouselIndicators.classList.remove('hidden');
 }
 
