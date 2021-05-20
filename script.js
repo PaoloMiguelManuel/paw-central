@@ -91,7 +91,7 @@ function createBreedHeading(availableImages) {
     // available image count badge
     badge.setAttribute('id', 'count-badge');
     badge.classList.add('badge', 'badge-warning');
-    badge.innerHTML = `${availableImages} image${availableImages === 1 ? '' : 's'} available`;
+    badge.innerHTML = `${availableImages} image${availableImages === 1 ? '' : 's'}`;
 
     // append selected breed name and image count badge to <h2>
     h2.appendChild(breedHeadingName);
