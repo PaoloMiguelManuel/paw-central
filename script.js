@@ -19,11 +19,12 @@ function updateError(message, action) {
 function updateAlert(availableImages, action) {
     let alertContainer = document.querySelector("#alert-container");
     let alertMessage = document.querySelector("#alert-message");
+    let selectedBreed = document.querySelector("#breeds");
     let verb = `${availableImages === 1 ? 'is' : 'are'}`;
 
     if (action === 'show') {
         alertContainer.classList.remove('hidden');
-        alertMessage.innerHTML = `There ${verb} only ${availableImages} image${availableImages === 1 ? '' : 's'} available!`;
+        alertMessage.innerHTML = `There ${verb} only ${availableImages} image${availableImages === 1 ? '' : 's'} of ${selectedBreed.value}s available!`;
     } else {
         alertContainer.classList.add('hidden');
         alertMessage.innerHTML = "";
