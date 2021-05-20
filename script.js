@@ -86,7 +86,7 @@ function createBreedHeading(availableImages) {
 
     // selected breed name
     breedHeadingName.setAttribute('id', 'breed-name');
-    breedHeadingName.innerHTML = `Selected Breed: <span class="highlight">${selectedBreed.value}</span>`;
+    breedHeadingName.innerHTML = `Breed: <span class="highlight">${selectedBreed.value}</span>`;
 
     // available image count badge
     badge.setAttribute('id', 'count-badge');
