@@ -40,7 +40,6 @@ blockquote {
 
 main {
   background-color: #181a1b;
-  margin: 2em 0;
   height: 75vh;
   padding-bottom: 10px;
   display: -webkit-box;
@@ -65,8 +64,8 @@ img {
   text-align: center;
 }
 
-.alert {
-  margin-bottom: 0;
+#error-container, #alert-container {
+  margin: 25px auto 0 auto;
 }
 
 .hidden {
