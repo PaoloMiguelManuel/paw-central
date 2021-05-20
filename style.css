@@ -45,6 +45,7 @@ blockquote {
 main {
   background-color: #181a1b;
   height: 75vh;
+  margin-bottom: 50px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -88,7 +89,7 @@ h2 {
   font-size: 3em;
   line-height: 0.5em;
   padding: 0 10px;
-  margin-bottom: 0.5em;
+  margin-bottom: 50px;
   margin-top: 50px;
 }
 
