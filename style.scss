@@ -41,7 +41,7 @@ blockquote {
 
 main {
   background-color: #181a1b;
-  margin: 2em 0;
+  // margin: 2em 0;
   // height: auto;
   height: 75vh;
   // padding-top: 10px;
@@ -61,9 +61,15 @@ img {
   text-align: center;
 }
 
-.alert {
-  margin-bottom: 0;
+
+
+#error-container, #alert-container {
+  margin: 25px auto 0 auto;
 }
+
+// .alert {
+//   margin-bottom: 0;
+// }
 
 .hidden {
   display: none;
