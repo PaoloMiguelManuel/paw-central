@@ -7,6 +7,10 @@ body {
   height: 100%;
 }
 
+.hidden {
+  display: none;
+}
+
 .main-heading {
   font-family: "Permanent Marker", cursive;
   font-size: 5.5em;
@@ -54,6 +58,15 @@ main {
           justify-content: center;
 }
 
+p {
+  text-align: center;
+  padding: 0 2em 0;
+}
+
+label {
+  padding-top: 15px;
+}
+
 img {
   max-width: 100%;
   max-height: 30em;
@@ -64,20 +77,9 @@ img {
   text-align: center;
 }
 
-#error-container, #alert-container {
+#error-container,
+#alert-container {
   margin: 25px auto 0 auto;
-}
-
-.hidden {
-  display: none;
-}
-
-.modal {
-  display: block;
-}
-
-.carousel-indicators .active {
-  background-color: #ffc107;
 }
 
 .carousel-control-prev-icon {
@@ -86,10 +88,6 @@ img {
 
 .carousel-control-next-icon {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23FFC107' width='8' height='8' viewBox='0 0 8 8'%3e%3cpath d='M2.75 0l-1.5 1.5L3.75 4l-2.5 2.5L2.75 8l4-4-4-4z'/%3e%3c/svg%3e");
-}
-
-.carousel-caption {
-  display: inline-block;
 }
 
 h2 {
@@ -139,14 +137,5 @@ h5 {
 .call-to:hover {
   text-decoration: none;
   color: #ffc107;
-}
-
-label {
-  padding-top: 15px;
-}
-
-p {
-  text-align: center;
-  padding: 0 2em 0;
 }
 /*# sourceMappingURL=style.css.map */
