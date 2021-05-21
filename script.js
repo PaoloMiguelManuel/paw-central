@@ -24,7 +24,7 @@ function updateAlert(availableImages, action) {
 
     if (action === 'show') {
         alertContainer.classList.remove('hidden');
-        alertMessage.innerHTML = `There ${verb} only ${availableImages} image${availableImages === 1 ? '' : 's'} of ${selectedBreed.value}s available!`;
+        alertMessage.innerHTML = `There ${verb} only ${availableImages} image${availableImages === 1 ? '' : 's'} available!`;
     } else {
         alertContainer.classList.add('hidden');
         alertMessage.innerHTML = "";
