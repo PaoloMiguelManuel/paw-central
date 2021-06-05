@@ -23,6 +23,7 @@ body {
     font-size: 4.5em;
     line-height: 0.9em;
     padding-top: 0.5em;
+    letter-spacing: 3px;
   }
 
   blockquote {
@@ -115,19 +116,17 @@ footer.page-footer {
     padding-bottom: 0.3em;
   }
 
-  line-height: 2em;
+  // line-height: 2em;
 
   .footer-info {
-    // padding-top: 1em;
-    // height: 200px;
-    // height: auto;
-    // background: darkred;
-
-    p {
-      // padding-left: 1.5em;
-      // padding-right: 1.5em;
+    .about-site, .tech-used {
+      line-height: 2em;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      // background: red;
     }
-    // text-align: center;
+
   }
 
   form {
@@ -140,6 +139,12 @@ footer.page-footer {
     // display: flex;
     // justify-content: center;
     // background: #ffc107;
+    label {
+      // color: #ffc107;
+    }
+    textarea{
+      height: 100px;
+    }
     textarea,
     input {
       &:focus {
@@ -147,6 +152,14 @@ footer.page-footer {
         border: 3px solid #ffc107;
         box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
       }
+
+      resize: none;
+      // box-sizing: border-box;
+      // outline: none;
+    }
+
+    .form-group {
+      margin-bottom: 0.75em;
     }
 
     .form-group:last-of-type {
@@ -155,6 +168,8 @@ footer.page-footer {
       // padding-top:
       // margin: 0;
       // width: 100px;
+      padding-top: 0.5em;
+      margin-bottom: 3em;
     }
   }
 
@@ -172,8 +187,10 @@ footer.page-footer {
   }
 
   .cpy-info {
-    font-size: 2rem;
+    font-size: 1.5rem;
     background-color: #0b0c0c;
+    // background: red;
+    // padding-top: 500px;
     // color: #737a7e;
     position: fixed;
     bottom: 0;

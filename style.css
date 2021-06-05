@@ -21,6 +21,7 @@ body {
   font-size: 4.5em;
   line-height: 0.9em;
   padding-top: 0.5em;
+  letter-spacing: 3px;
 }
 
 .form-buttons-alerts {
@@ -93,7 +94,6 @@ main .carousel-control-next-icon {
 
 footer.page-footer {
   background: #181a1b;
-  line-height: 2em;
 }
 
 footer.page-footer h5 {
@@ -101,6 +101,29 @@ footer.page-footer h5 {
   color: #ffffff;
   text-align: center;
   padding-bottom: 0.3em;
+}
+
+footer.page-footer .footer-info .about-site, footer.page-footer .footer-info .tech-used {
+  line-height: 2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+footer.page-footer form textarea {
+  height: 100px;
+}
+
+footer.page-footer form textarea,
+footer.page-footer form input {
+  resize: none;
 }
 
 footer.page-footer form textarea:focus,
@@ -111,6 +134,10 @@ footer.page-footer form input:focus {
           box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
+footer.page-footer form .form-group {
+  margin-bottom: 0.75em;
+}
+
 footer.page-footer form .form-group:last-of-type {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -118,6 +145,8 @@ footer.page-footer form .form-group:last-of-type {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  padding-top: 0.5em;
+  margin-bottom: 3em;
 }
 
 footer.page-footer .fa-socials {
@@ -135,7 +164,7 @@ footer.page-footer .fa-socials a:hover {
 }
 
 footer.page-footer .cpy-info {
-  font-size: 2rem;
+  font-size: 1.5rem;
   background-color: #0b0c0c;
   position: fixed;
   bottom: 0;
