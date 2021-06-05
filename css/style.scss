@@ -4,7 +4,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   background-color: $bgColour;
   color: #ffffff;
 }
@@ -19,40 +19,26 @@ body {
 
 .heading-quote {
   .main-heading {
-    font-family: "Permanent Marker", cursive;
+    font-family: 'Permanent Marker', cursive;
     font-size: 4.5em;
     line-height: 0.9em;
     padding-top: 0.5em;
     letter-spacing: 3px;
   }
-
-  blockquote {
-    // padding-bottom: 3em;
-  }
-}
-
-.contact-form {
-  // background: darkolivegreen;
 }
 
 .form-buttons-alerts {
-  // padding-top: 1em;
-  margin-top: 2em;
-  // margin-bottom: 2em;
   background: $bgColour;
+  margin-top: 2em;
+
   label {
     padding-top: 15px;
   }
 
-  #error-container,
-  #alert-container {
-    // margin: 25px auto 0 auto;
-  }
-
   select,
   input {
-    // font-family: "Poppins", sans-serif;
     font-size: 1rem;
+
     &:focus {
       outline: none;
       border: 3px solid #ffc107;
@@ -61,20 +47,13 @@ body {
   }
 }
 
-main {
-  // background-color: #181a1b;
-  // background: $bgColour;
+.heading-pictures {
   background: $bgColour;
   height: 75vh;
-  // margin-bottom: 50px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding-bottom: 1em;
-
-  h2 {
-    // padding: 5em 0;
-  }
 
   #breed-name {
     color: #ffffff;
@@ -87,6 +66,7 @@ main {
     top: -8px;
     left: 8px;
   }
+
   .carousel-inner {
     background-color: #181a1b;
     text-align: center;
@@ -94,7 +74,6 @@ main {
     img {
       max-width: 100%;
       max-height: 500px;
-      // height: 500px;
     }
   }
 
@@ -107,8 +86,9 @@ main {
   }
 }
 
-footer.page-footer {
+.page-footer {
   background: $bgColour;
+
   h5 {
     font-size: 1.5rem;
     color: #ffffff;
@@ -116,35 +96,21 @@ footer.page-footer {
     padding-bottom: 0.3em;
   }
 
-  // line-height: 2em;
-
   .footer-info {
-    .about-site, .tech-used {
+    .about-site,
+    .tech-used {
       line-height: 2em;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      // background: red;
     }
-
   }
 
   form {
-    // max-width: 50vw;
-    // max-width: 400px;
-
-    // text-align: center;
-    // margin: auto;
-    // background:
-    // display: flex;
-    // justify-content: center;
-    // background: #ffc107;
-    label {
-      // color: #ffc107;
-    }
-    textarea{
+    textarea {
       height: 100px;
     }
+
     textarea,
     input {
       &:focus {
@@ -152,10 +118,7 @@ footer.page-footer {
         border: 3px solid #ffc107;
         box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
       }
-
       resize: none;
-      // box-sizing: border-box;
-      // outline: none;
     }
 
     .form-group {
@@ -165,9 +128,6 @@ footer.page-footer {
     .form-group:last-of-type {
       display: flex;
       justify-content: center;
-      // padding-top:
-      // margin: 0;
-      // width: 100px;
       padding-top: 0.5em;
       margin-bottom: 3em;
     }
@@ -186,17 +146,13 @@ footer.page-footer {
     padding-bottom: 3em;
   }
 
-  .cpy-info {
-    font-size: 1.5rem;
+  .footer-socials {
     background-color: #0b0c0c;
-    // background: red;
-    // padding-top: 500px;
-    // color: #737a7e;
+    font-size: 1.5rem;
     position: fixed;
     bottom: 0;
     width: 100%;
-    // margin-top: 500px;
-    // color: red;
+
     #paolo-sig {
       font-family: 'Vampiro One', cursive;
       color: #ffc107;
@@ -205,6 +161,7 @@ footer.page-footer {
 
     a {
       padding: 0 0.4em;
+
       i {
         color: #ffffff;
         &:hover {
@@ -213,22 +170,5 @@ footer.page-footer {
         }
       }
     }
-
-    // .call-to {
-    //   color: #ffffff;
-    //   &:hover {
-    //     text-decoration: none;
-    //     color: #ffc107;
-    //   }
-    // }
   }
 }
-
-// h2 {
-//   font-size: 3em;
-//   // margin-top: 1em;
-//   line-height: 0.5em;
-//   padding: 0 10px;
-//   margin-bottom: 15px;
-//   margin-top: 50px;
-// }
